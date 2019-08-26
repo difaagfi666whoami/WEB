@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <!--head digunakan tempat nama di tab windows.-->
+    <head>
+        <title>My Profile Page</title>
+        <meta name="viewport" content="width-device-width,
+        initial-scale=1.0">
+        <link rel="stylesheet" href="Assets/css/style.css">
+    </head>
+    <body>
+       <nav>
+           <div class="menu-mobile">
+               <a href="#" onclick="showMenu()">Menu</a>
+           </div>
+           <ul id="menu">
+               <li><a href="https://google.com">HOME</a></li>
+               <li><a href="TUTORIALS">TUTORIALS</a></li>
+               <li><a href="https://youtube.com">ABOUT ME</a></li>
+           </ul>
+       </nav> 
+
+       <section id="box-profile">
+           <div class="img-profile">
+               <div class="photo" style="background-image: url(Assets/img/fotoku.jpg);"></div>
+           </div>
+           <div class="description">
+               <h1 id="pName">Difa Agfi Desebrio Syah</h1>
+               <p id="pRole">Fresh Gradute From State Polytechnic of Malang</p>
+               <a href="#input-form" class="button bg-green" onclick="editFrom()">Edit</a>
+               <a href="#" class="button border-blue">Resume</a>
+           </div>
+           <div class="information">
+               <div class="data">
+                   <p class="field">Availability</p>
+                   <p id="pAvailability" class="text-grey">Full Time</p>
+               </div>
+               <div class="data">
+                <p class="field">Age</p>
+                <p id="pAge" class="text-grey">17</p>
+            </div>
+               <div class="data">
+                   <p class="field">Location</div</p>
+                   <p id="pLocation" class="text-grey">Malang Indonesia</p>
+               </div>
+               <div class="data">
+                    <p class="field">Years Exp</p>
+                    <p id="pExp"class="text-grey">0</p>
+                </div>
+                <div class="data">
+                    <p class="field">Email</p>
+                    <p id="pEmail" class="text-grey">difaagfi1998@gmail.com</p>
+                </div>
+           </div>
+       </section>
+
+       <section id="input-form">
+           <!-- <form method="#" action="#"> -->
+                <div class="form">
+                    <label>Name</label>
+                    <input id="inpName" type="Text" name="name">
+                </div>   
+                <div class="form">
+                    <label>Role</label>
+                    <input id="inpRole" type="Text" name="role">
+                </div>
+                <div class="form">
+                    <label>Availability</label>
+                    <input id="inpAvailability" type="Text" name="availability">
+                </div>
+                <div class="form">
+                    <label>Age</label>
+                    <input id="inpAge" type="number" name="age">
+                </div>
+                <div class="form">
+                    <label>Location</label>
+                    <input id="inpLocation" type="Text" name="location">
+                </div>
+                <div class="form">
+                    <label>Years Exp</label>
+                    <input id="inpExp" type="number" name="years">
+                </div>
+                <div class="form">
+                    <label>Email</label>
+                    <input id="inpEmail" type="email" name="email">
+                </div>
+                <div class="form">
+                    <input onclick="simpanForm()" type="submit" name="submit" value="SUBMIT" class="bg-blue">
+                </div>
+           <!-- </form> -->
+       </section>
+
+       <script>
+           var formMenu = document.getElementById("input-form");
+           formMenu.style.display="none";
+
+           function editFrom(){
+               if(formMenu.style.display === "none"){
+                   formMenu.style.display = "block";
+               }else{
+                   formMenu.style.display = "none";
+               }
+           }
+
+           var name = document.getElementById("pName").innerHTML;
+           var role = document.getElementById("pRole").innerHTML;
+           var availability = document.getElementById("pAvailability").innerHTML;
+           var age = document.getElementById("pAge").innerHTML;
+           var years = document.getElementById("pExp").innerHTML;
+           var email = document.getElementById("pEmail").innerHTML;
+           
+           document.getElementById("inpName").value = name;
+           document.getElementById("inpRole").value = role;
+           document.getElementById("inpAvailability").value = availability;
+           document.getElementById("inpAge").value = age;
+           document.getElementById("inpExp").value = years;
+           document.getElementById("inpEmail").value = email;
+
+
+           function simpanForm(){
+               formMenu.style.display = "none";
+               var = document.getElementById("inpName").value;
+               document.getElementById("pName").innerHTML = name;
+
+           }
+           function showMenu(){
+               var menu = document.getElementById("menu");
+               var box = document.getElementById("box-profile");
+
+               if(menu.style.display === "block"){
+                   menu.style.display = "none";
+                   box.style.paddingTop = "0px";
+               }else{
+                   menu.style.display = "block";
+                   box.style.paddingTop = "170px";
+               }
+           }
+       </script>
+    </body>
+
+
+</html>
